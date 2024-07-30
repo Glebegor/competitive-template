@@ -96,14 +96,13 @@ void remDup(V<T> &v) {
 }
 using namespace std;
 
-// Test cases
+// Test cases solution
 
 // void solve() {
 // }
 
 // int main() {
 //     // freopen("task.in", "r", stdin);
-// 	// the following line creates/overwrites the output file
 // 	// freopen("task.out", "w", stdout);
     
 //     ios::sync_with_stdio(0);
@@ -120,15 +119,13 @@ using namespace std;
 // }
 
 
-
-// Solo solution
+// Single cases solution
 
 void solve() {
 }
 
 int main() {
     // freopen("task.in", "r", stdin);
-	// the following line creates/overwrites the output file
 	// freopen("task.out", "w", stdout);
     
     ios::sync_with_stdio(0);
