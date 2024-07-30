@@ -24,7 +24,7 @@
 // HLIB ARSENIUK
 // TEMPLATE VERSION 1.3
 // DESCRIPTION:
-// Main template that using in CP by Hlib Arseniuk. :<
+// Main template that I'm using in CP by Hlib Arseniuk. :>
 // 2024 y.
 
 // '*UUUUUwUUUUU*'
@@ -94,6 +94,12 @@ void remDup(V<T> &v) {
     sort(v.begin(), v.end()); // Sort the elements of the vector
     v.erase(unique(v.begin(), v.end()), v.end()); // Remove duplicates
 }
+
+// Pairs
+#define f first
+#define s second
+
+
 using namespace std;
 
 // Test cases solution
