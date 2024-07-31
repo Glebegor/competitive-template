@@ -22,7 +22,7 @@
 #include <bitset>
 
 // HLIB ARSENIUK
-// TEMPLATE VERSION 1.3
+// TEMPLATE VERSION 1.4
 // DESCRIPTION:
 // Main template that I'm using in CP by Hlib Arseniuk. :>
 // 2024 y.
@@ -95,9 +95,19 @@ void remDup(V<T> &v) {
     v.erase(unique(v.begin(), v.end()), v.end()); // Remove duplicates
 }
 
+struct pair_hash {
+    template <class T1, class T2>
+    std::size_t operator () (const std::pair<T1, T2> &pair) const {
+        auto h1 = std::hash<T1>{}(pair.first);
+        auto h2 = std::hash<T2>{}(pair.second);
+        return h1 ^ h2;
+    }
+};
+
 // Pairs
 #define f first
 #define s second
+#define mkp make_pair
 
 
 using namespace std;
