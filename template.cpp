@@ -22,7 +22,7 @@
 #include <bitset>
 
 // HLIB ARSENIUK
-// TEMPLATE VERSION 1.4
+// TEMPLATE VERSION 1.4.1
 // DESCRIPTION:
 // Main template that I'm using in CP by Hlib Arseniuk. :>
 // 2024 y.
@@ -55,6 +55,8 @@ typedef V<std::string> vs;
 typedef V<bool> vb;
 typedef V<ll> vl;
 typedef V<ld> vd;
+typedef V<V<int>> vvi;
+typedef V<V<ll>> vvl;
 
 #define sz(x) int(size(x))
 #define bg(x) begin(x)
