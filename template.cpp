@@ -22,7 +22,7 @@
 #include <bitset>
 
 // HLIB ARSENIUK
-// TEMPLATE VERSION 1.5.1
+// TEMPLATE VERSION 1.5.2
 // DESCRIPTION:
 // Main template that I'm using in CP :>
 // 2024 y.
@@ -113,6 +113,7 @@ struct pair_hash {
 
 // Fors
 #define FOR(i,a,b) for (int _n(b), i(a); i <= _n; i++)
+#define FORD(i,b,a) for (int _n(b), i(a); i <= _n; i--)
 
 using namespace std;
 
@@ -120,10 +121,6 @@ using namespace std;
 
 
 int main() {
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-
-    
 
     return 0;
 }
