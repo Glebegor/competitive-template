@@ -22,7 +22,7 @@
 #include <bitset>
 
 // HLIB ARSENIUK
-// TEMPLATE VERSION 1.4.1
+// TEMPLATE VERSION 1.5
 // DESCRIPTION:
 // Main template that I'm using in CP by Hlib Arseniuk. :>
 // 2024 y.
@@ -111,36 +111,9 @@ struct pair_hash {
 #define s second
 #define mkp make_pair
 
-
 using namespace std;
 
-// Test cases solution
-
-// void solve() {
-// }
-
-// int main() {
-//     // freopen("task.in", "r", stdin);
-// 	// freopen("task.out", "w", stdout);
-    
-//     ios::sync_with_stdio(0);
-//     cin.tie(0);
-
-//     int t;
-//     cin >> t;
-
-//     while (t--) {
-//         solve();
-//     }
-
-//     return 0;
-// }
-
-
-// Single cases solution
-
-void solve() {
-}
+// ###$=-----------------+=:|| MAIN ||:=+-----------------=$### //
 
 int main() {
     // freopen("task.in", "r", stdin);
@@ -149,7 +122,12 @@ int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
 
-    solve();
+    // int t;
+    // cin >> t;
+    // while (t--) {
+        
+    // }
 
     return 0;
 }
+
