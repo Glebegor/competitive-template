@@ -22,65 +22,44 @@
 #include <bitset>
 using namespace std;
 
-// Geeksforgeeks Template
-const int N = 100000;  
-  
-int n; // array size 
-  
-// Max size of tree 
-int tree[2 * N]; 
-  
-// function to build the tree 
-void build( int arr[])  
-{  
-    for (int i=0; i<n; i++)     
-        tree[n+i] = arr[i]; 
-    for (int i = n - 1; i > 0; --i)      
-        tree[i] = tree[i<<1] + tree[i<<1 | 1];     
-} 
-  
-// function to update a tree node 
-void updateTreeNode(int p, int value)  
-{  
-    tree[p+n] = value; 
-    p = p+n; 
-    for (int i=p; i > 1; i >>= 1) 
-        tree[i>>1] = tree[i] + tree[i^1]; 
-} 
-  
-// function to get sum on interval [l, r) 
-int query(int l, int r)  
-{  
-    int res = 0; 
-    for (l += n, r += n; l < r; l >>= 1, r >>= 1) 
-    { 
-        if (l&1)  
-            res += tree[l++]; 
-        if (r&1)  
-            res += tree[--r]; 
-    } 
-    return res; 
-} 
-  
-// driver program to test the above function  
-int main()  
-{ 
-    int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}; 
-  
-    // n is global 
-    n = sizeof(a)/sizeof(a[0]); 
-      
-    // build tree  
-    build(a); 
-      
-    // print the sum in range(1,2) index-based 
-    cout << query(1, 3)<<endl; 
-      
-    // modify element at 2nd index 
-    updateTreeNode(2, 1); 
-      
-    // print the sum in range(1,2) index-based 
-    cout << query(1, 3)<<endl; 
-  
-    return 0; 
-} 
+// Hlib Arseniuk Template
+class SegmentTree {
+private:
+    vector<int> tree;
+    int n;
+
+    void build(int n) {
+        this->n = n;
+        tree.resize(2 * n, 0);
+        for (int i = n; i < 2 * n; ++i) tree[i] = 1;
+        for (int i = n - 1; i > 0; --i) tree[i] = tree[2 * i] + tree[2 * i + 1];
+    }
+
+public:
+    SegmentTree(int n) {
+        build(n);
+    }
+
+    // Update the segment tree at index idx (set it to 0)
+    void update(int idx) {
+        idx += n;
+        tree[idx] = 0;
+        for (idx /= 2; idx > 0; idx /= 2) {
+            tree[idx] = tree[2 * idx] + tree[2 * idx + 1];
+        }
+    }
+
+    // Query to find the k-th available slot
+    int query(int k) {
+        int pos = 1;
+        while (pos < n) {
+            if (tree[2 * pos] >= k) {
+                pos = 2 * pos;
+            } else {
+                k -= tree[2 * pos];
+                pos = 2 * pos + 1;
+            }
+        }
+        return pos - n;
+    }
+};
