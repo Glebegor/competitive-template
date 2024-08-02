@@ -22,9 +22,9 @@
 #include <bitset>
 
 // HLIB ARSENIUK
-// TEMPLATE VERSION 1.5
+// TEMPLATE VERSION 1.5.1
 // DESCRIPTION:
-// Main template that I'm using in CP by Hlib Arseniuk. :>
+// Main template that I'm using in CP :>
 // 2024 y.
 
 // '*UUUUUwUUUUU*'
@@ -111,23 +111,19 @@ struct pair_hash {
 #define s second
 #define mkp make_pair
 
+// Fors
+#define FOR(i,a,b) for (int _n(b), i(a); i <= _n; i++)
+
 using namespace std;
 
 // ###$=-----------------+=:|| MAIN ||:=+-----------------=$### //
 
+
 int main() {
-    // freopen("task.in", "r", stdin);
-	// freopen("task.out", "w", stdout);
-    
     ios::sync_with_stdio(0);
     cin.tie(0);
 
-    // int t;
-    // cin >> t;
-    // while (t--) {
-        
-    // }
+    
 
     return 0;
 }
-
