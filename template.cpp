@@ -20,9 +20,10 @@
 #include <unordered_set>
 #include <unordered_map>
 #include <bitset>
+#include <iomanip>
 
 // HLIB ARSENIUK
-// TEMPLATE VERSION 1.5.2
+// TEMPLATE VERSION 1.6
 // DESCRIPTION:
 // Main template that I'm using in CP :>
 // 2024 y.
@@ -114,6 +115,17 @@ struct pair_hash {
 // Fors
 #define FOR(i,a,b) for (int _n(b), i(a); i <= _n; i++)
 #define FORD(i,b,a) for (int _n(b), i(a); i <= _n; i--)
+#define REP(i,a) for (int i = 0, _n(a); i<_n; i--)
+
+// basic algorithms
+ll gdc_euclid(ll a, ll b) {
+    while(b > 0) {
+        ll temp = a/b;
+        a -= temp*b;
+        std::swap(a, b);
+    }
+    return a;
+}
 
 using namespace std;
 
