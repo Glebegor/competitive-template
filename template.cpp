@@ -23,7 +23,7 @@
 #include <iomanip>
 
 // HLIB ARSENIUK
-// TEMPLATE VERSION 1.6
+// TEMPLATE VERSION 1.7.1
 // DESCRIPTION:
 // Main template that I'm using in CP :>
 // 2024 y.
@@ -39,10 +39,12 @@
 // Standard types
 using ll = long long;
 using ld = long double;
+using l128 =  __int128_t;
 
 // Some constants
 #define INF 1e12 + 7
-#define MOD 1000000009
+#define MOD7 1e9 + 7;
+#define MOD9 1e12 + 9;
 #define MAX 100000
 #define MIN 0
 #define EU exp(1.0)
@@ -106,7 +108,15 @@ T gdc_euclid(T a, T b) {
         std::swap(a, b);
     }
     return a;
-} // find greate common div.
+} // finds greate common div
+
+template<typename T>
+T factorial(T a) {
+    if(a == 0) {
+        return 1;
+    }
+    return factorial(a-1) * a;
+} // finds factorial
 
 struct pair_hash {
     template <class T1, class T2>
@@ -121,6 +131,7 @@ struct pair_hash {
 #define f first
 #define s second
 #define mkp make_pair
+typedef pair<int, int> pii;
 
 // Fors
 #define FOR(i,a,b) for (int _n(b), i(a); i <= _n; i++)
