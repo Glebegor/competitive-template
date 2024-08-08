@@ -98,6 +98,16 @@ void remDup(V<T> &v) {
     v.erase(unique(v.begin(), v.end()), v.end()); // Remove duplicates
 }
 
+template<typename T>
+T gdc_euclid(T a, T b) {
+    while(b > 0) {
+        ll temp = a/b;
+        a -= temp*b;
+        std::swap(a, b);
+    }
+    return a;
+} // find greate common div.
+
 struct pair_hash {
     template <class T1, class T2>
     std::size_t operator () (const std::pair<T1, T2> &pair) const {
@@ -117,15 +127,9 @@ struct pair_hash {
 #define FORD(i,b,a) for (int _n(b), i(a); i <= _n; i--)
 #define REP(i,a) for (int i = 0, _n(a); i<_n; i--)
 
-// basic algorithms
-ll gdc_euclid(ll a, ll b) {
-    while(b > 0) {
-        ll temp = a/b;
-        a -= temp*b;
-        std::swap(a, b);
-    }
-    return a;
-}
+// file output/input
+// freopen("input.txt", "r", stdin);
+// freopen("output.txt", "r", stdout);
 
 using namespace std;
 
