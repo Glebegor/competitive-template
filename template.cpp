@@ -54,6 +54,7 @@ const ld PI = acos((ld)-1);
 template<typename T>
 using V = std::vector<T>;
 typedef V<int> vi;
+typedef V<V<int>> vii;
 typedef V<std::string> vs;
 typedef V<bool> vb;
 typedef V<ll> vl;
@@ -131,7 +132,7 @@ struct pair_hash {
 #define f first
 #define s second
 #define mkp make_pair
-typedef pair<int, int> pii;
+typedef std::pair<int, int> pii;
 
 // Fors
 #define FOR(i,a,b) for (int _n(b), i(a); i <= _n; i++)
