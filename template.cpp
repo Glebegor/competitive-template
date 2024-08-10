@@ -132,7 +132,7 @@ vector<T> divisors(T n) {
     }
     sort(all(ans));
     return ans;
-}
+} // finds all divisiors
 
 struct pair_hash {
     template <class T1, class T2>
@@ -141,7 +141,7 @@ struct pair_hash {
         auto h2 = std::hash<T2>{}(pair.second);
         return h1 ^ h2;
     }
-};
+}; // pair hash
 
 // Pairs
 #define f first
