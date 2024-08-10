@@ -23,7 +23,7 @@
 #include <iomanip>
 
 // HLIB ARSENIUK
-// TEMPLATE VERSION 1.7.1
+// TEMPLATE VERSION 1.8
 // DESCRIPTION:
 // Main template that I'm using in CP :>
 // 2024 y.
@@ -118,6 +118,21 @@ T factorial(T a) {
     }
     return factorial(a-1) * a;
 } // finds factorial
+
+template<typename T>
+vector<T> divisors(T n) {
+    vector<T> ans;
+    for (int d = 1; d * d <= n; ++d) {
+        if (n % d == 0) {
+            ans.pb(d);
+            if (d * d != n) {
+                ans.pb(n / d);
+            }
+        }
+    }
+    sort(all(ans));
+    return ans;
+}
 
 struct pair_hash {
     template <class T1, class T2>
