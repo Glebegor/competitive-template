@@ -23,7 +23,7 @@
 #include <iomanip>
 
 // HLIB ARSENIUK
-// TEMPLATE VERSION 1.8
+// TEMPLATE VERSION 2.1
 // DESCRIPTION:
 // Main template that I'm using in CP :>
 // 2024 y.
@@ -120,18 +120,18 @@ T factorial(T a) {
 } // finds factorial
 
 template<typename T>
-vector<T> divisors(T n) {
-    vector<T> ans;
-    for (int d = 1; d * d <= n; ++d) {
+std::vector<T> divisors(T n) {
+    std::vector<T> res;
+    for (T d = 1; d * d <= n; ++d) {
         if (n % d == 0) {
-            ans.pb(d);
+            res.pb(d);
             if (d * d != n) {
-                ans.pb(n / d);
+                res.pb(n / d);
             }
         }
     }
-    sort(all(ans));
-    return ans;
+    sort(all(res));
+    return res;
 } // finds all divisiors
 
 struct pair_hash {
@@ -162,8 +162,12 @@ using namespace std;
 
 // ###$=-----------------+=:|| MAIN ||:=+-----------------=$### //
 
+void solve() {
+    
+    return;
+}
 
 int main() {
-
+    solve();
     return 0;
 }
