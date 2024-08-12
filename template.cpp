@@ -23,7 +23,7 @@
 #include <iomanip>
 
 // HLIB ARSENIUK
-// TEMPLATE VERSION 2.1
+// TEMPLATE VERSION 2.2
 // DESCRIPTION:
 // Main template that I'm using in CP :>
 // 2024 y.
@@ -40,6 +40,8 @@
 using ll = long long;
 using ld = long double;
 using l128 =  __int128_t;
+using u32 = unsigned;
+using u64 = unsigned long long;
 
 // Some constants
 #define INF 1e12 + 7
