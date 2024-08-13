@@ -182,6 +182,9 @@ void solve() {
 }
 
 int main() {
+    // freopen("input.txt", "r", stdin);
+    // freopen("output.txt", "r", stdout);
+    ios_base::sync_with_stdio(0);
     solve();
     return 0;
 }
