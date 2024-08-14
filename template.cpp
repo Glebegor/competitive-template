@@ -23,7 +23,7 @@
 #include <iomanip>
 
 // HLIB ARSENIUK
-// TEMPLATE VERSION 2.3
+// TEMPLATE VERSION 2.3.1
 // DESCRIPTION:
 // Main template that I'm using in CP :>
 // 2024 y.
@@ -166,11 +166,10 @@ typedef std::pair<int, int> pii;
 // Fors
 #define FOR(i,a,b) for (int _n(b), i(a); i <= _n; i++)
 #define FORD(i,b,a) for (int _n(b), i(a); i <= _n; i--)
-#define REP(i,a) for (int i(0), _n(a); i<_n; i--)
 
 // file output/input
 // freopen("input.txt", "r", stdin);
-// freopen("output.txt", "r", stdout);
+// freopen("output.txt", "w", stdout);
 
 using namespace std;
 
@@ -183,7 +182,7 @@ void solve() {
 
 int main() {
     // freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "r", stdout);
+    // freopen("output.txt", "w", stdout);
     ios_base::sync_with_stdio(0);
     solve();
     return 0;
