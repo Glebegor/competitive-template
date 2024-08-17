@@ -23,7 +23,7 @@
 #include <iomanip>
 
 // HLIB ARSENIUK
-// TEMPLATE VERSION 2.4
+// TEMPLATE VERSION 2.5
 // DESCRIPTION:
 // Main template that I'm using in CP :>
 // 2024 y.
@@ -33,6 +33,24 @@
 // 'q2-H-X-+--M|-'
 // '----------||-'
 // 'me--------==-'
+/*
+▄███████▀▀▀▀▀▀███████▄
+░▐████▀▒ЗАПУСКАЕМ▒▀██████▄
+░███▀▒▒▒▒▒ДЯДЮ▒▒▒▒▒▒▀█████
+░▐██▒▒▒▒▒▒БОГДАНА▒▒▒▒▒████▌
+░▐█▌▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████▌
+░░█▒▄▀▀▀▀▀▄▒▒▄▀▀▀▀▀▄▒▐███▌
+░░░▐░░░▄▄░░▌▐░░░▄▄░░▌▐███▌
+░▄▀▌░░░▀▀░░▌▐░░░▀▀░░▌▒▀▒█▌
+░▌▒▀▄░░░░▄▀▒▒▀▄░░░▄▀▒▒▄▀▒▌
+░▀▄▐▒▀▀▀▀▒▒▒▒▒▒▀▀▀▒▒▒▒▒▒█
+░░░▀▌▒▄██▄▄▄▄████▄▒▒▒▒█▀
+░░░░▄██████████████▒▒▐▌
+░░░▀███▀▀████▀█████▀▒▌
+░░░░░▌▒▒▒▄▒▒▒▄▒▒▒▒▒▒▐
+░░░░░▌▒▒▒▒▀▀▀▒▒▒▒▒▒▒▐
+TAYA 
+*/ // by xoxo
 
 // START OF THE TEMPLATE HELL
 
@@ -167,6 +185,7 @@ typedef std::pair<int, int> pii;
 #define FOR(i,a,b) for (int _n(b), i(a); i <= _n; i++)
 #define FORD(i,b,a) for (int _n(b), i(a); i <= _n; i--)
 #define REP(i,n) for (int i = 0; i < n; i++)
+#define trav(a,x) for (auto &a : x)
 
 // file output/input
 // freopen("input.txt", "r", stdin);
