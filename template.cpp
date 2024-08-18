@@ -23,7 +23,7 @@
 #include <iomanip>
 
 // HLIB ARSENIUK
-// TEMPLATE VERSION 2.5
+// TEMPLATE VERSION 2.6
 // DESCRIPTION:
 // Main template that I'm using in CP :>
 // 2024 y.
@@ -165,6 +165,18 @@ std::vector<bool> seive_count(int n) {
     }
     return is_prime;
 } // prime numbers
+
+bool is_prime(int n) {
+    if(n<2) {
+        return false;
+    }
+    for(int x = 2; x*x <= n; x++) {
+        if(n%x == 0) {
+            return false;
+        }
+    }
+    return true;
+} // is_prime
 
 struct pair_hash {
     template <class T1, class T2>
