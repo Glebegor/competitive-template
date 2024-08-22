@@ -62,7 +62,11 @@ using ld = long double;
 using l128 =  __int128_t;
 using u32 = unsigned;
 using u64 = unsigned long long;
+
+// Complex nums
 using Com =  std::complex<ll>;
+#define ComX real()
+#define ComY real()
 
 // Some constants
 #define INF 1e12 + 7
