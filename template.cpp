@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <algorithm>
 #include <iostream>
 #include <memory.h>
 #include <numeric>
@@ -21,9 +22,10 @@
 #include <unordered_map>
 #include <bitset>
 #include <iomanip>
+#include <complex>
 
 // HLIB ARSENIUK
-// TEMPLATE VERSION 2.6.1
+// TEMPLATE VERSION 2.7
 // DESCRIPTION:
 // Main template that I'm using in CP :>
 // 2024 y.
@@ -60,6 +62,7 @@ using ld = long double;
 using l128 =  __int128_t;
 using u32 = unsigned;
 using u64 = unsigned long long;
+using Com =  std::complex<ll>;
 
 // Some constants
 #define INF 1e12 + 7
