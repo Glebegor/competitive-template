@@ -139,6 +139,11 @@ T gdc_euclid(T a, T b) {
 } // finds greate common div
 
 template<typename T>
+T lcd(T a, T b) {
+    return a / gdc_euclid(a, b) * b;
+} // finds least common denominator by gdc euclid
+
+template<typename T>
 T factorial(T a) {
     if(a == 0) {
         return 1;
