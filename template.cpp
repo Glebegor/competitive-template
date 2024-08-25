@@ -1,14 +1,3 @@
-#include <algorithm>
-#include <algorithm>
-#include <iostream>
-#include <memory.h>
-#include <numeric>
-#include <sstream>
-#include <iterator>
-#include <cassert>
-#include <fstream>
-#include <cstdlib>
-#include <vector>
 #include <cstdio>
 #include <string>
 #include <queue>
@@ -25,7 +14,7 @@
 #include <complex>
 
 // HLIB ARSENIUK
-// TEMPLATE VERSION 2.8
+// TEMPLATE VERSION 2.9
 // DESCRIPTION:
 // Main template that I'm using in CP :>
 // 2024 y.
@@ -76,6 +65,7 @@ using Com =  std::complex<ll>;
 #define MIN 0
 #define EU exp(1.0)
 const ld PI = acos((ld)-1);
+const int maxNum = 111111111;
 
 // Vectors
 template<typename T>
