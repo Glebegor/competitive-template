@@ -1,3 +1,14 @@
+#include <algorithm>
+#include <algorithm>
+#include <iostream>
+#include <memory.h>
+#include <numeric>
+#include <sstream>
+#include <iterator>
+#include <cassert>
+#include <fstream>
+#include <cstdlib>
+#include <vector>
 #include <cstdio>
 #include <string>
 #include <queue>
@@ -13,8 +24,9 @@
 #include <iomanip>
 #include <complex>
 
+
 // HLIB ARSENIUK
-// TEMPLATE VERSION 2.9
+// TEMPLATE VERSION 3.0
 // DESCRIPTION:
 // Main template that I'm using in CP :>
 // 2024 y.
@@ -51,6 +63,7 @@ using ld = long double;
 using l128 =  __int128_t;
 using u32 = unsigned;
 using u64 = unsigned long long;
+using lli = long long int;
 
 // Complex nums
 using Com =  std::complex<ll>;
