@@ -26,7 +26,7 @@
 
 
 // HLIB ARSENIUK
-// TEMPLATE VERSION 3.0
+// TEMPLATE VERSION 3.0.1
 // DESCRIPTION:
 // Main template that I'm using in CP :>
 // 2024 y.
@@ -52,8 +52,8 @@
 ░░░▀███▀▀████▀█████▀▒▌
 ░░░░░▌▒▒▒▄▒▒▒▄▒▒▒▒▒▒▐
 ░░░░░▌▒▒▒▒▀▀▀▒▒▒▒▒▒▒▐
-TAYA 
-*/ // by xoxo
+TAYA, found in @xoxo@ submissions
+*/
 
 // START OF THE TEMPLATE HELL
 
@@ -89,6 +89,7 @@ typedef V<std::string> vs;
 typedef V<bool> vb;
 typedef V<ll> vl;
 typedef V<ld> vd;
+typedef V<lli> vli;
 typedef V<V<int>> vvi;
 typedef V<V<ll>> vvl;
 
