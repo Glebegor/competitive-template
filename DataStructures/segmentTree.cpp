@@ -63,3 +63,23 @@ public:
         return pos - n;
     }
 };
+
+
+// int n;
+// vi a;
+
+// void solve() {
+//     cin >> n;
+//     a.rsz(n*2-1);
+//     FOR(i, 0, n-1) {
+//         cin >> a[i+n-1];
+//     }
+//     for(int i = n-2; i>=0; i--) {
+//         a[i] = a[2*i+1] + a[2*i+2];
+//     }
+
+//     FOR(i, 0, a.size()-1) {
+//         cout << a[i] << " ";
+//     }
+//     return;
+// }
