@@ -160,3 +160,74 @@ public:
 //     solve();
 //     return 0;
 // }
+
+
+
+// struct Segment {
+//     long long total_sum;
+//     long long prefix_sum;
+//     long long suffix_sum;
+//     long long max_sum;
+
+//     Segment(long long total_sum = 0, long long prefix_sum = 0, long long suffix_sum = 0, long long max_sum = 0)
+//         : total_sum(total_sum), prefix_sum(prefix_sum), suffix_sum(suffix_sum), max_sum(max_sum) {}
+// };
+
+// struct segTree {
+//     int size;
+//     vector<Segment> tree;
+
+//     void init(int n) {
+//         size = 1;
+//         while (size < n) size *= 2;
+//         tree.assign(2 * size, Segment());
+//     }
+
+//     Segment merge(Segment left, Segment right) {
+//         Segment result;
+//         result.total_sum = left.total_sum + right.total_sum;
+//         result.prefix_sum = max(left.prefix_sum, left.total_sum + right.prefix_sum);
+//         result.suffix_sum = max(right.suffix_sum, right.total_sum + left.suffix_sum);
+//         result.max_sum = max({left.max_sum, right.max_sum, left.suffix_sum + right.prefix_sum});
+//         return result;
+//     }
+
+//     void build(const vector<long long>& arr, int x, int lx, int rx) {
+//         if (rx - lx == 1) {
+//             if (lx < arr.size()) {
+//                 tree[x] = Segment(arr[lx], max(0LL, arr[lx]), max(0LL, arr[lx]), max(0LL, arr[lx]));
+//             }
+//             return;
+//         }
+//         int mid = (lx + rx) / 2;
+//         build(arr, 2 * x + 1, lx, mid);
+//         build(arr, 2 * x + 2, mid, rx);
+//         tree[x] = merge(tree[2 * x + 1], tree[2 * x + 2]);
+//     }
+
+//     void build(const vector<long long>& arr) {
+//         build(arr, 0, 0, size);
+//     }
+
+//     void set(int i, long long v, int x, int lx, int rx) {
+//         if (rx - lx == 1) {
+//             tree[x] = Segment(v, max(0LL, v), max(0LL, v), max(0LL, v));
+//             return;
+//         }
+//         int mid = (lx + rx) / 2;
+//         if (i < mid) {
+//             set(i, v, 2 * x + 1, lx, mid);
+//         } else {
+//             set(i, v, 2 * x + 2, mid, rx);
+//         }
+//         tree[x] = merge(tree[2 * x + 1], tree[2 * x + 2]);
+//     }
+
+//     void set(int i, long long v) {
+//         set(i, v, 0, 0, size);
+//     }
+
+//     Segment max_sum_query() {
+//         return tree[0];
+//     }
+// };
