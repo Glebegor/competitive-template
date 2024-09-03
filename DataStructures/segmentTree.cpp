@@ -231,3 +231,24 @@ public:
 //         return tree[0];
 //     }
 // };
+
+
+// struct segTree {
+//     vl sums;
+//     ll size;
+
+//     void build(ll n) {
+//         size = 1;
+//         while (size < n) size *= 2;
+//         sums.assign(size * 2, 0);
+//     }
+
+//     void set(ll i, ll v) {
+//         i += size - 1;
+//         sums[i] = v;
+//         while (i > 0) {
+//             i = (i - 1) / 2;
+//             sums[i] = sums[2 * i + 1] + sums[2 * i + 2];
+//         }
+//     }
+    
