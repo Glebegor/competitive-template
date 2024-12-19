@@ -26,7 +26,7 @@
 
 
 // HLIB ARSENIUK
-// TEMPLATE VERSION 3.0.1
+// TEMPLATE VERSION 3.0.2
 // DESCRIPTION:
 // Main template that I'm using in CP :>
 // 2024 y.
@@ -58,12 +58,12 @@ TAYA, found in @xoxo@ submissions
 // START OF THE TEMPLATE HELL
 
 // Standard types
-using ll = long long;
-using ld = long double;
-using l128 =  __int128_t;
-using u32 = unsigned;
-using u64 = unsigned long long;
-using lli = long long int;
+using ll = long long; // 2^32 - 1
+using ld = long double; // 2^32 - 1
+using l128 =  __int128_t; // 2^128 - 1
+using u32 = unsigned; // 2^32 - 1
+using u64 = unsigned long long; // 2^64 - 1
+using lli = long long int; // 2^63 - 1
 
 // Complex nums
 using Com =  std::complex<ll>;
@@ -72,9 +72,8 @@ using Com =  std::complex<ll>;
 
 // Some constants
 #define INF 1e12 + 7
-#define MOD7 1e9 + 7;
-#define MOD9 1e12 + 9;
-#define MAX 100000
+#define MOD7e9 1e9 + 7;
+#define MOD9e12 1e12 + 9;
 #define MIN 0
 #define EU exp(1.0)
 const ld PI = acos((ld)-1);
