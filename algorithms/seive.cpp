@@ -21,63 +21,36 @@
 #include <unordered_map>
 #include <bitset>
 #include <iomanip>
-#include <complex>
-
 
 // HLIB ARSENIUK
-// TEMPLATE VERSION 3.1.0
+// TEMPLATE VERSION 2.2
 // DESCRIPTION:
 // Main template that I'm using in CP :>
 // 2024 y.
-// 2025 y.
 
 // '*UUUUUwUUUUU*'
 // 'q1-H-+-X---M-'
 // 'q2-H-X-+--M|-'
 // '----------||-'
 // 'me--------==-'
-/*
-▄███████▀▀▀▀▀▀███████▄
-░▐████▀▒ЗАПУСКАЕМ▒▀██████▄
-░███▀▒▒▒▒▒ДЯДЮ▒▒▒▒▒▒▀█████
-░▐██▒▒▒▒▒▒БОГДАНА▒▒▒▒▒████▌
-░▐█▌▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████▌
-░░█▒▄▀▀▀▀▀▄▒▒▄▀▀▀▀▀▄▒▐███▌
-░░░▐░░░▄▄░░▌▐░░░▄▄░░▌▐███▌
-░▄▀▌░░░▀▀░░▌▐░░░▀▀░░▌▒▀▒█▌
-░▌▒▀▄░░░░▄▀▒▒▀▄░░░▄▀▒▒▄▀▒▌
-░▀▄▐▒▀▀▀▀▒▒▒▒▒▒▀▀▀▒▒▒▒▒▒█
-░░░▀▌▒▄██▄▄▄▄████▄▒▒▒▒█▀
-░░░░▄██████████████▒▒▐▌
-░░░▀███▀▀████▀█████▀▒▌
-░░░░░▌▒▒▒▄▒▒▒▄▒▒▒▒▒▒▐
-░░░░░▌▒▒▒▒▀▀▀▒▒▒▒▒▒▒▐
-TAYA, found in @xoxo@ submissions
-*/
 
 // START OF THE TEMPLATE HELL
 
 // Standard types
-using ll = long long; // 2^32 - 1
-using ld = long double; // 2^32 - 1
-using l128 =  __int128_t; // 2^128 - 1
-using u32 = unsigned; // 2^32 - 1
-using u64 = unsigned long long; // 2^64 - 1
-using lli = long long int; // 2^63 - 1
-
-// Complex nums
-using Com =  std::complex<ll>;
-#define ComX real()
-#define ComY real()
+using ll = long long;
+using ld = long double;
+using l128 =  __int128_t;
+using u32 = unsigned;
+using u64 = unsigned long long;
 
 // Some constants
 #define INF 1e12 + 7
-#define MOD7e9 1e9 + 7;
-#define MOD9e12 1e12 + 9;
+#define MOD7 1e9 + 7;
+#define MOD9 1e12 + 9;
+#define MAX 100000
 #define MIN 0
 #define EU exp(1.0)
 const ld PI = acos((ld)-1);
-const int maxNum = 111111111;
 
 // Vectors
 template<typename T>
@@ -88,7 +61,6 @@ typedef V<std::string> vs;
 typedef V<bool> vb;
 typedef V<ll> vl;
 typedef V<ld> vd;
-typedef V<lli> vli;
 typedef V<V<int>> vvi;
 typedef V<V<ll>> vvl;
 
@@ -132,25 +104,14 @@ void remDup(V<T> &v) {
 }
 
 template<typename T>
-T gcd_euclid(T a, T b) {
+T gdc_euclid(T a, T b) {
     while(b > 0) {
         ll temp = a/b;
         a -= temp*b;
         std::swap(a, b);
     }
     return a;
-} // finds greatest common divisor
-
-template<typename T>
-T lcd(T a, T b) {
-    return a / gcd_euclid(a, b) * b;
-} // finds least common denominator by gdc euclid
-
-template<typename T>
-T lcm(T a, T b) {
-    return abs(a*b)/ gcd_euclid(a, b);
-} // least common multiple
-
+} // finds greate common div
 
 template<typename T>
 T factorial(T a) {
@@ -175,30 +136,6 @@ std::vector<T> divisors(T n) {
     return res;
 } // finds all divisiors
 
-std::vector<bool> seive_count(int n) {
-    std::vector<bool> is_prime(n+1, true);
-    is_prime[0] = is_prime[1] = false;
-    for (int i = 2; i <= n; i++) {
-        if (is_prime[i] && (long long)i * i <= n) {
-            for (int j = i * i; j <= n; j += i)
-                is_prime[j] = false;
-        }
-    }
-    return is_prime;
-} // prime numbers
-
-bool is_prime_number(int n) {
-    if(n<2) {
-        return false;
-    }
-    for(int x = 2; x*x <= n; x++) {
-        if(n%x == 0) {
-            return false;
-        }
-    }
-    return true;
-} // is_prime
-
 struct pair_hash {
     template <class T1, class T2>
     std::size_t operator () (const std::pair<T1, T2> &pair) const {
@@ -217,16 +154,26 @@ typedef std::pair<int, int> pii;
 // Fors
 #define FOR(i,a,b) for (int _n(b), i(a); i <= _n; i++)
 #define FORD(i,b,a) for (int _n(b), i(a); i <= _n; i--)
-#define REP(i,n) for (int i = 0; i < n; i++)
-#define trav(a,x) for (auto &a : x)
+#define REP(i,a) for (int i(0), _n(a); i<_n; i--)
 
 // file output/input
 // freopen("input.txt", "r", stdin);
-// freopen("output.txt", "w", stdout);
+// freopen("output.txt", "r", stdout);
 
 using namespace std;
 
 // ###$=-----------------+=:|| MAIN ||:=+-----------------=$### //
+vector<bool> seive(int n) {
+    vector<bool> is_prime(n+1, true);
+    is_prime[0] = is_prime[1] = false;
+    for (int i = 2; i <= n; i++) {
+        if (is_prime[i] && (long long)i * i <= n) {
+            for (int j = i * i; j <= n; j += i)
+                is_prime[j] = false;
+        }
+    }
+    return is_prime;
+}
 
 void solve() {
     
@@ -234,10 +181,6 @@ void solve() {
 }
 
 int main() {
-    // freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "w", stdout);
-    ios_base::sync_with_stdio(0);
-    cin.tie(NULL);
     solve();
     return 0;
 }

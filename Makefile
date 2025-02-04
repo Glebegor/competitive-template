@@ -10,5 +10,11 @@ build-17:
 build-17-run:
 	g++ -std=c++17 main.cpp && ./a.out
 
+clangpp-17:
+	clang++ --std=c++20 -lm -O2 main.cpp -o main
+clangpp-17-run:
+	clang++ --std=c++20 -lm -O2 main.cpp -o main
+	./main
+
 delete:
 	rm ./a.out
