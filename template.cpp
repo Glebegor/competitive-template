@@ -25,9 +25,10 @@
 
 
 // HLIB ARSENIUK
-// TEMPLATE VERSION 3.1.0
+// TEMPLATE VERSION 3.1.1
 // DESCRIPTION:
-// Main template that I'm using in CP :>
+// Main template that I'm using in competitive programming :>
+// https://github.com/Glebegor/competitive-template
 // 2024 y.
 // 2025 y.
 
