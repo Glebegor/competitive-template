@@ -1,10 +1,10 @@
-# Competitive template
+# Competitive Template
+
 ## Description
-This is template that I'm using in competitive programming.
-Here will be desctiption of the main functions.
 
+This is the template I use for competitive programming. Below is a detailed description of the main functions and utilities included.
 
-## imports
+## Imports
 
 ```cpp
 #include <algorithm>
@@ -30,6 +30,7 @@ Here will be desctiption of the main functions.
 #include <unordered_map>
 #include <bitset>
 #include <iomanip>
+#include <complex>
 ```
 
 ## Types
@@ -37,21 +38,25 @@ Here will be desctiption of the main functions.
 ```cpp
 using ll = long long;
 using ld = long double;
-using l128 =  __int128_t;
+using l128 = __int128_t;
 using u32 = unsigned;
 using u64 = unsigned long long;
+using lli = long long int;
+using Com = std::complex<ll>; // Complex numbers
+#define ComX real()
+#define ComY imag()
 ```
 
-## Consts
+## Constants
 
 ```cpp
 #define INF 1e12 + 7
-#define MOD7 1e9 + 7;
-#define MOD9 1e12 + 9;
-#define MAX 100000
+#define MOD7 1e9 + 7
+#define MOD9 1e12 + 9
 #define MIN 0
 #define EU exp(1.0)
 const ld PI = acos((ld)-1);
+const int maxNum = 111111111;
 ```
 
 ## Vectors
@@ -65,6 +70,7 @@ typedef V<std::string> vs;
 typedef V<bool> vb;
 typedef V<ll> vl;
 typedef V<ld> vd;
+typedef V<lli> vli;
 typedef V<V<int>> vvi;
 typedef V<V<ll>> vvl;
 
@@ -81,7 +87,7 @@ typedef V<V<ll>> vvl;
 #define bk back()
 ```
 
-## Basic functions
+## Basic Functions
 
 ```cpp
 template<typename T>
@@ -106,27 +112,37 @@ bool ckmax(T &a, const T &b) {
 
 template<typename T>
 void remDup(V<T> &v) {
-    sort(v.begin(), v.end()); // Sort the elements of the vector
-    v.erase(unique(v.begin(), v.end()), v.end()); // Remove duplicates
-}
+    sort(v.begin(), v.end());
+    v.erase(unique(v.begin(), v.end()), v.end());
+}  // Remove duplicates
 
 template<typename T>
-T gdc_euclid(T a, T b) {
-    while(b > 0) {
-        ll temp = a/b;
-        a -= temp*b;
+T gcd_euclid(T a, T b) {
+    while (b > 0) {
+        ll temp = a / b;
+        a -= temp * b;
         std::swap(a, b);
     }
     return a;
-} // finds greate common div
+}  // Greatest common divisor
+
+template<typename T>
+T lcd(T a, T b) {
+    return a / gcd_euclid(a, b) * b;
+}  // Least common denominator
+
+template<typename T>
+T lcm(T a, T b) {
+    return abs(a * b) / gcd_euclid(a, b);
+}  // Least common multiple
 
 template<typename T>
 T factorial(T a) {
-    if(a == 0) {
+    if (a == 0) {
         return 1;
     }
-    return factorial(a-1) * a;
-} // finds factorial
+    return factorial(a - 1) * a;
+}  // Factorial
 
 template<typename T>
 std::vector<T> divisors(T n) {
@@ -141,10 +157,10 @@ std::vector<T> divisors(T n) {
     }
     sort(all(res));
     return res;
-} // finds all divisiors
+}  // Find all divisors
 
 std::vector<bool> seive_count(int n) {
-    std::vector<bool> is_prime(n+1, true);
+    std::vector<bool> is_prime(n + 1, true);
     is_prime[0] = is_prime[1] = false;
     for (int i = 2; i <= n; i++) {
         if (is_prime[i] && (long long)i * i <= n) {
@@ -153,29 +169,28 @@ std::vector<bool> seive_count(int n) {
         }
     }
     return is_prime;
-} // prime numbers
+}  // Prime numbers
 
 bool is_prime_number(int n) {
-    if(n<2) {
+    if (n < 2) {
         return false;
     }
-    for(int x = 2; x*x <= n; x++) {
-        if(n%x == 0) {
+    for (int x = 2; x * x <= n; x++) {
+        if (n % x == 0) {
             return false;
         }
     }
     return true;
-} // is_prime
+}  // Check if prime
 
 struct pair_hash {
     template <class T1, class T2>
-    std::size_t operator () (const std::pair<T1, T2> &pair) const {
+    std::size_t operator()(const std::pair<T1, T2> &pair) const {
         auto h1 = std::hash<T1>{}(pair.first);
         auto h2 = std::hash<T2>{}(pair.second);
         return h1 ^ h2;
     }
-}; // pair hash
-
+};  // Pair hash
 ```
 
 ## Pairs
@@ -187,13 +202,13 @@ struct pair_hash {
 typedef std::pair<int, int> pii;
 ```
 
-## Fors
+## Loops
 
 ```cpp
-#define FOR(i,a,b) for (int _n(b), i(a); i <= _n; i++)
-#define FORD(i,b,a) for (int _n(b), i(a); i <= _n; i--)
-#define REP(i,n) for (int i = 0; i < n; i++)
-#define trav(a,x) for (auto &a : x)
+#define FOR(i, a, b) for (int _n(b), i(a); i <= _n; i++)
+#define FORD(i, b, a) for (int _n(b), i(a); i <= _n; i--)
+#define REP(i, n) for (int i = 0; i < n; i++)
+#define trav(a, x) for (auto &a : x)
 ```
 
 ## Files
